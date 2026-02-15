@@ -1,0 +1,116 @@
+/*//////////Global set up//////////*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+header, main, footer {
+    width: 100%;
+}
+
+
+
+/*/////Header/////*/
+
+/*///Navigation section///*/
+nav, nav .logo, nav menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    width: 100%;
+    height: 64px;
+    padding: 1rem 1.5rem;
+}
+/*Logo part*/
+nav .logo {
+    height: 2rem;
+    font-size: 1.3rem;
+    color: #000;
+}
+nav .logo p {
+    font-weight: 800;
+    
+}
+nav .logo span {
+    font-weight: 100;
+    color: gray;
+}
+/*Menu part*/
+nav menu {
+    height: 2rem;
+    list-style: none;
+}
+nav menu li {
+    margin-left: 1rem;
+}
+nav menu a {
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: rgb(91, 91, 91);  
+}
+
+/*///Customer start section///*/
+.start {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0 2rem 1.5rem;
+    background-color: rgb(210, 210, 210);
+    color: rgb(65, 64, 64);  
+}
+/*Image part*/
+.start figure {
+    width: 60%;
+    height: 100%;
+}
+.start figure img {
+    width: 100%;
+    height: auto;
+}
+/*Text part*/
+.start article {
+    width: 30%;
+    padding-left: 1.5rem;
+}
+.start article h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.start article p {
+    margin: 1.5rem 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+/*Button part*/
+.start article button {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.15rem;
+    color: white;
+    background-color: rgb(65, 64, 64); 
+    border: none;
+    cursor: pointer;
+}
+
+
+/*/////Main/////*/
+
+/*///Academy-info section///*/
+main .academy-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0 2rem 1.5rem;
+}
+
