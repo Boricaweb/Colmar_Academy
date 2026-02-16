@@ -15,12 +15,19 @@ body {
 }
 header, main, footer {
     width: 100%;
+    height: auto;
+}
+:root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-p: 1.1rem;
 }
 
 
 
 /*/////Header/////*/
-
 /*///Navigation section///*/
 nav, nav .logo, nav menu {
     display: flex;
@@ -29,88 +36,253 @@ nav, nav .logo, nav menu {
 }
 nav {
     width: 100%;
-    height: 64px;
+    height: 4rem;
     padding: 1rem 1.5rem;
-}
-/*Logo part*/
-nav .logo {
-    height: 2rem;
-    font-size: 1.3rem;
-    color: #000;
-}
-nav .logo p {
-    font-weight: 800;
-    
-}
-nav .logo span {
-    font-weight: 100;
-    color: gray;
-}
-/*Menu part*/
-nav menu {
-    height: 2rem;
-    list-style: none;
-}
-nav menu li {
-    margin-left: 1rem;
-}
-nav menu a {
-    font-size: 1.15rem;
-    text-decoration: none;
-    color: rgb(91, 91, 91);  
-}
+
+    /*Logo part*/
+    & .logo {
+        height: 2rem;
+        font-size: 1.3rem;
+        color: #000;
+
+        & p {
+            font-weight: 800;           
+        }
+
+        & span {
+            font-weight: 100;
+            color: gray;
+        }
+    }
+
+    /*Menu part*/
+    & menu {
+        height: 2rem;
+        list-style: none;
+
+        & li {
+            margin-left: 1rem;
+
+            & a {
+                font-size: 1.15rem;
+                text-decoration: none;
+                color: rgb(91, 91, 91);  
+            }
+        }
+    }
+} 
 
 /*///Customer start section///*/
 .start {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 2rem 0 2rem 1.5rem;
+    height: 35rem;
     background-color: rgb(210, 210, 210);
     color: rgb(65, 64, 64);  
-}
-/*Image part*/
-.start figure {
-    width: 60%;
-    height: 100%;
-}
-.start figure img {
-    width: 100%;
-    height: auto;
-}
-/*Text part*/
-.start article {
-    width: 30%;
-    padding-left: 1.5rem;
-}
-.start article h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-.start article p {
-    margin: 1.5rem 0;
-    font-size: 1.15rem;
-    font-weight: 500;
-}
-/*Button part*/
-.start article button {
-    width: 100%;
-    height: 3rem;
-    font-size: 1.15rem;
-    color: white;
-    background-color: rgb(65, 64, 64); 
-    border: none;
-    cursor: pointer;
+
+    /*Image part*/
+    & figure {
+        width: 60%;
+        height: auto;
+        padding: 2rem 1.5rem;
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /*Text part*/
+    & article {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & h1 {
+            font-size: var(--font-size-h1);
+            font-weight: 700;
+        }
+        & p {
+            margin: 1.5rem 0;
+            font-size: var(--font-size-p);
+            font-weight: 500;
+        }
+
+        /*Button part*/
+        & button {
+            width: 100%;
+            height: 3rem;
+            padding: 0.5rem;
+            font-size: 1.15rem;
+            color: white;
+            background-color: rgb(65, 64, 64); 
+            cursor: pointer;
+        }
+    }
+
 }
 
 
 /*/////Main/////*/
-
-/*///Academy-info section///*/
-main .academy-info {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 2rem 0 2rem 1.5rem;
+main {
+    color: rgb(65, 64, 64);  
 }
 
+/*///Academy-intro section///*/
+main .academy-info {
+    display: flex;   
+    width: 100%;
+    height: 40rem;
+    background-color: rgb(255, 255, 255);
+
+    /*Article part*/
+    & article {
+        width: 60%;
+        height: 100%;
+        padding: 2rem 1.5rem;
+
+        & figure {
+            width: 100%;
+            padding-bottom: 2rem;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        & h2 {
+            font-size: var(--font-size-h2);
+            font-weight: 700;
+        }
+
+        & p {
+            font-size: var(--font-size-p);
+            padding: 1.5rem 0;
+        }
+
+        & .writer {
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0;
+        }
+    }
+
+    /*aside part*/
+    & aside {
+        width: 40%;
+        height: 100%;
+        padding: 1rem 0 2rem;
+        border-left: rgb(194, 194, 194) solid 1px;
+
+        & .academy {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+
+            & figure {
+                width: 35%;
+                height: auto;
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            & div {
+                width: 65%;
+                padding-left: 1rem;
+
+                & h3 {
+                    font-size: var(--font-size-h3);
+                    font-weight: 600;
+                    padding-bottom: 0.5rem;
+                }
+
+                & p {
+                    font-size: var(--font-size-p);
+                    padding-bottom: 0.5rem;
+                }
+
+                & a {
+                    font-size: 1rem;
+                    text-decoration: none;
+                }
+            }
+
+            &:hover {
+                background-color: rgb(210, 210, 210);
+            }
+        }
+    }
+}
+
+/*///Learning-path section///*/
+main .learning-path {
+    width: 100%;
+    height: 55rem;
+    background-color: rgb(233, 233, 233);
+
+    /*h2 part*/
+    & h2 {
+        font-size: var(--font-size-h2);
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    /*learning-container part*/
+    & .learning-container {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        gap: 2rem;
+        grid-auto-flow: dense;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding: 0 4.5rem 2rem;
+
+        & .child { 
+            background-color: rgb(255, 255, 255);
+
+            & figure {
+                width: 100%;
+                height: auto;
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            & article {
+                width: 100%;
+                height: auto;
+                text-align: start;
+                padding: 1rem 1rem 1.5rem;
+
+                & h3 {
+                    font-size: var(--font-size-h3);
+                    font-weight: 600;
+                }
+
+                & h4 {
+                    font-size: var(--font-size-h4);
+                    font-weight: 500;
+                    padding: 0.5rem 0;
+                }
+
+                & p {
+                    font-size: var(--font-size-p);
+                }
+            }
+        }
+        
+    }
+}
