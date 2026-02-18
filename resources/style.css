@@ -234,6 +234,7 @@ main .academy-info {
                 & a {
                     font-size: var(--font-size-p);
                     text-decoration: none;
+                    color: blue;
                 }
             }
 
@@ -263,9 +264,9 @@ main .learning-path {
     /*learning-container part*/
     & .learning-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 2rem;
-        justify-content: center;
+        justify-items: center;
         width: 100%;
         height: 90%;
         padding: 0 4.5rem 2rem;
@@ -454,15 +455,15 @@ footer {
 
 
 /*//////////Style for mobile screens//////////*/
-ul.mobile-screens {
+ul.mobile-screens, img.mobile-screens {
     display: none;
 }
 
 @media (max-width: 500px) {
 
     /*/////Remove some navigation, academy-info, learning-path, thesis/////*/
-    :is(section.logo, ul.big-screens, .academy-info article,
-    .learning-path .learning-container, .thesis .thesis-container :is(aside, article h3, article p) ) {
+    :is(section.logo, ul.big-screens, .academy-info article, img.big-screens, .learning-path .learning-container,
+    .thesis .thesis-container :is(aside, article h3, article p)), footer div {
         display: none;
     }
 
@@ -477,28 +478,155 @@ ul.mobile-screens {
         width: 100%;
         height: 100%;
 
-            & li {
+        & li {
     
-                & a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 3rem;
-                    height: 3rem;
-                    padding: 5px;
-                    transition: all 0.2s;
+            & a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2.5rem;
+                height: 2.5rem;
+                padding: 5px;
+                transition: all 0.2s;
     
-                    & img {
+                & img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                &:active {
+                    border-radius: 20%;
+                    background-color: rgb(122, 122, 122);
+                }
+            }
+        }        
+    }
+
+    /*/////Show mobile start section/////*/
+    .start {
+        flex-direction: column;
+        align-items: center;
+
+        & figure {
+            width: 100%;
+            padding: 0;
+        }
+
+        & article {
+            width: 100%;
+            padding: 2rem 1rem;
+
+            & p {
+                padding: 1rem 0;
+            }
+        }
+    }
+
+    /*/////Show mobile academy-info section/////*/
+    main .academy-info {
+        display: block;
+
+        & aside {
+            width: 100%;
+            border: none;
+
+            & .academy {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                
+                & figure {
+                    width: 100%;
+                    height: auto;
+
+                    & img.mobile-screens {
+                        display: block;
                         width: 100%;
                         height: auto;
                     }
+                }
 
-                    &:active {
-                        border-radius: 20%;
-                        background-color: rgb(122, 122, 122);
+                & div {
+                    width: 100%;
+                    padding: 1rem;
+
+                    & h3 {
+                        font-size: var(--font-size-h2);
+                        font-weight: 600;
+                        padding-bottom: 0.5rem;
                     }
                 }
             }
-        
+        }
+    }
+
+    /*/////Show mobile learning-path section/////*/
+    main .learning-path {
+        background-color: rgb(255, 255, 255);
+    }
+
+    main .learning-path h2 {
+        font-size: var(--font-size-h1);
+        padding: 1rem 0;
+    }
+
+    main .learning-path ul.mobile-screens {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        padding: 0 1rem 2rem;
+
+        & li {
+            width: 100%;
+            height: auto;
+            list-style: none;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background-color: rgb(214, 214, 214);
+            background-image: linear-gradient(#141414,#000000);
+            background-size: 100% 0%;
+            background-repeat: no-repeat;          
+            transition: all 0.1s;
+
+            & a {
+                font-size: var(--font-size-h3);
+                font-weight: 600;
+                text-decoration: none;
+                color: rgb(65, 64, 64);  
+            }
+
+            &:active {
+                background-size: 100% 100%;
+
+                & a {
+                    color: rgb(255, 255, 255);
+                }  
+            }
+        }
+    }
+    
+    /*/////Show mobile thesis section/////*/
+    main .thesis h2 {
+        font-size: var(--font-size-h1);
+        padding: 1rem 0;
+    }
+    main .thesis .thesis-container article {
+        padding: 0;
+
+        & video {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /*/////Show mobile footer/////*/
+    footer {
+        display: block;
+        text-align: start;
     }
 }
