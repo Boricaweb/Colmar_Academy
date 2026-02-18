@@ -27,24 +27,25 @@ header, main, footer {
 
 
 
+/*//////////Style for big screens//////////*/
 /*/////Header/////*/
 /*///Navigation section///*/
 /*nav:is(.logo, ul)*/
 /*nav, nav .logo, nav ul*/
-nav, nav :is(.logo, ul)  {
+nav, nav :where(.logo, ul)  {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 nav {
     width: 100%;
-    height: 4rem;
+    height: min(15%, 64px);
     padding: 1rem 1.5rem;
 
     /*Logo part*/
     & .logo {
         height: 2rem;
-        font-size: 1.3rem;
+        font-size: var(--font-size-h4);
         color: #000;
 
         & p {
@@ -82,19 +83,20 @@ nav {
 /*///Customer start section///*/
 .start {
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     width: 100%;
-    height: 35rem;
+    height: 100%;
     background-color: rgb(210, 210, 210);
     color: rgb(65, 64, 64);  
-
+    
     /*Image part*/
     & figure {
-        width: 60%;
+        width: clamp(450px, 60%, 650px);
         height: auto;
-        padding: 2rem 1.5rem;
-
+        padding: 2rem 0.75rem;
+        
         & img {
             width: 100%;
             height: auto;
@@ -103,11 +105,12 @@ nav {
 
     /*Text part*/
     & article {
-        width: 30%;
-        height: 100%;
+        width: clamp(300px, 40%, 500px);
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 2rem 0.75rem;
 
         & h1 {
             font-size: var(--font-size-h1);
@@ -125,7 +128,7 @@ nav {
             height: 3rem;
             padding: 0.5rem;
             border: none;
-            font-size: 1.15rem;
+            font-size: var(--font-size-p);
             cursor: pointer;
             color: white;
             background-color: rgb(65, 64, 64);  
@@ -149,16 +152,19 @@ main {
 
 /*///Academy-intro section///*/
 main .academy-info {
-    display: flex;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   
     width: 100%;
-    height: 40rem;
+    height: 100%;
     background-color: rgb(255, 255, 255);
 
     /*Article part*/
     & article {
-        width: 60%;
+        width: clamp(450px, 60%, 650px);
         height: 100%;
-        padding: 2rem 1.5rem;
+        padding: 2rem 0.75rem;
 
         & figure {
             width: 100%;
@@ -188,9 +194,9 @@ main .academy-info {
 
     /*aside part*/
     & aside {
-        width: 40%;
+        width: clamp(370px, 40%, 500px);
         height: 100%;
-        padding: 1rem 0 2rem;
+        padding: 1rem 1.5rem 2rem 0.75rem;
         border-left: rgb(194, 194, 194) solid 1px;
 
         & .academy {
@@ -212,7 +218,7 @@ main .academy-info {
 
             & div {
                 width: 65%;
-                padding-left: 1rem;
+                padding: 1rem;
 
                 & h3 {
                     font-size: var(--font-size-h3);
@@ -242,7 +248,7 @@ main .academy-info {
 /*///Learning-path section///*/
 main .learning-path {
     width: 100%;
-    height: 55rem;
+    height: 100%;
     background-color: rgb(233, 233, 233);
 
     /*h2 part*/
@@ -257,15 +263,15 @@ main .learning-path {
     /*learning-container part*/
     & .learning-container {
         display: grid;
-        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
-        grid-auto-flow: dense;
         justify-content: center;
         width: 100%;
         height: 90%;
         padding: 0 4.5rem 2rem;
 
         & .child {
+            width: min(250px, 100%);
             background-color: rgb(255, 255, 255);
             transition: transform 0.2s ease;
 
@@ -280,17 +286,17 @@ main .learning-path {
 
             & figure {
                 width: 100%;
-                height: auto;
+                height: 40%;
 
                 & img {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
                 }
             }
 
             & article {
                 width: 100%;
-                height: auto;
+                height: 60%;
                 text-align: start;
                 padding: 1rem 1rem 1.5rem;
 
@@ -317,7 +323,7 @@ main .learning-path {
 /*///Thesis section///*/
 main .thesis {
     width: 100%;
-    height: 45rem;
+    height: 100%;
     background-color: rgb(255, 255, 255);
 
     /*h2 part*/
@@ -338,15 +344,14 @@ main .thesis {
         height: 80%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 0 1.5rem;
+        flex-wrap: wrap;
         border-bottom: rgb(192, 192, 192) solid 1px;
 
         /*article part*/
         & article {
-            width: 60%;
+            width: clamp(450px, 60%, 650px);
             height: 100%;
-            padding: 0 1.5rem 2rem 0;
+            padding: 0 0.75rem 2rem 1.5rem;
 
             & video {
                 width: 100%;
@@ -368,8 +373,9 @@ main .thesis {
 
         /*aside part*/
         & aside {
-            width: 40%;
+            width: clamp(370px, 40%, 500px);
             height: 100%;
+            padding: 0 2rem 2rem 0.75rem;
 
             & .child {
                 width: 100%;
@@ -417,22 +423,82 @@ main .thesis {
 /*/////Footer/////*/
 footer {
     width: 100%;
-    height: 5rem;
+    height: min(10%, 60px);
     background-color: rgb(255, 255, 255); 
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.25rem, 0.1vw + 0.8rem, 2.1rem);
 
-    & a {
+    & p {
+        font-weight: 500;
+    }
+
+    & div {
         padding: 0.5rem;
-        text-decoration: none;
-        color: rgb(0, 0, 0);  
 
-        &:hover {
-            text-decoration: underline;
+        & a {
+            padding-left: 0.5rem;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            
+            &:hover {
+                text-decoration: underline;
+            }
         }
+    }
+}
+
+
+
+/*//////////Style for mobile screens//////////*/
+ul.mobile-screens {
+    display: none;
+}
+
+@media (max-width: 500px) {
+
+    /*/////Remove some navigation, academy-info, learning-path, thesis/////*/
+    :is(section.logo, ul.big-screens, .academy-info article,
+    .learning-path .learning-container, .thesis .thesis-container :is(aside, article h3, article p) ) {
+        display: none;
+    }
+
+    /*/////Show mobile navigation/////*/
+    nav {
+        padding: 0.5rem;
+    }
+    nav ul.mobile-screens {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+            & li {
+    
+                & a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 3rem;
+                    height: 3rem;
+                    padding: 5px;
+                    transition: all 0.2s;
+    
+                    & img {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    &:active {
+                        border-radius: 20%;
+                        background-color: rgb(122, 122, 122);
+                    }
+                }
+            }
+        
     }
 }
